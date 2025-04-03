@@ -1,47 +1,19 @@
 [project]
-name = "recbole"
+name = "project"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12.0"
 dependencies = [
-    "torch>=1.10.0",
-]
-
-[project.optional-dependencies]
-cpu = [
-    "torch>=1.10.0",
-    "torchvision>=0.21.0",
-]
-cu124 = [
-    "torch>=1.10.0",
-    "torchvision>=0.21.0",
-]
-
-[tool.uv]
-conflicts = [
-  [
-    { extra = "cpu" },
-    { extra = "cu124" },
-  ],
 ]
 
 [tool.uv.sources]
 torch = [
-  { index = "pytorch-cpu", extra = "cpu" },
-  { index = "pytorch-cu124", extra = "cu124" },
+    { index = "pytorch-cpu" },
 ]
 torchvision = [
-  { index = "pytorch-cpu", extra = "cpu" },
-  { index = "pytorch-cu124", extra = "cu124" },
+    { index = "pytorch-cpu" },
 ]
 
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
-explicit = true
-
-[[tool.uv.index]]
-name = "pytorch-cu124"
-url = "https://download.pytorch.org/whl/cu124"
 explicit = true
